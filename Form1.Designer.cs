@@ -29,32 +29,24 @@
         private void InitializeComponent()
         {
             this.activeButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.timerInterval = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.clientName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.timerInterval)).BeginInit();
             this.SuspendLayout();
             // 
             // activeButton
             // 
-            this.activeButton.Location = new System.Drawing.Point(12, 62);
+            this.activeButton.Location = new System.Drawing.Point(15, 115);
             this.activeButton.Name = "activeButton";
             this.activeButton.Size = new System.Drawing.Size(75, 23);
             this.activeButton.TabIndex = 0;
             this.activeButton.Text = "Start";
             this.activeButton.UseVisualStyleBackColor = true;
             this.activeButton.Click += new System.EventHandler(this.activeButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Location = new System.Drawing.Point(121, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Wylaczone";
             // 
             // timerInterval
             // 
@@ -63,7 +55,7 @@
             0,
             0,
             0});
-            this.timerInterval.Location = new System.Drawing.Point(13, 12);
+            this.timerInterval.Location = new System.Drawing.Point(15, 79);
             this.timerInterval.Maximum = new decimal(new int[] {
             360000,
             0,
@@ -86,31 +78,58 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(187, 19);
+            this.label2.Location = new System.Drawing.Point(189, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "ms";
             // 
-            // checkBox1
+            // clientName
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 39);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(66, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Manaski";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.clientName.Location = new System.Drawing.Point(14, 24);
+            this.clientName.Name = "clientName";
+            this.clientName.Size = new System.Drawing.Size(169, 20);
+            this.clientName.TabIndex = 5;
+            this.clientName.Text = "hades";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Client Name (.exe file name):";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Interval:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(45, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 39);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Configure your hotkeys:\r\nF10 = Food\r\nF11 = Spell";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(209, 92);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(217, 202);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.clientName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.timerInterval);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.activeButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -125,10 +144,12 @@
         #endregion
 
         private System.Windows.Forms.Button activeButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown timerInterval;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox clientName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 

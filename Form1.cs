@@ -18,25 +18,24 @@ namespace TibiaMLVL
         public Form1()
         {
             InitializeComponent();
-            tibia = new TrainMLvl("client");
+            tibia = new TrainMLvl();
         }
 
         private void activeButton_Click(object sender, EventArgs e)
         {
+            tibia.processName = clientName.Text;
             if (tibia.active == false)
             {
-                tibia.StartTimer((int)timerInterval.Value, checkBox1.Checked);
-                timerInterval.Enabled = false;
-                checkBox1.Enabled = false;
-                label1.Text = "Wlaczone";
-                activeButton.Text = "Stop";
+                if (tibia.StartTimer((int)timerInterval.Value))
+                {
+                    timerInterval.Enabled = false;
+                    activeButton.Text = "Stop";
+                }
             }
             else
             {
                 tibia.StopTimer();
                 timerInterval.Enabled = true;
-                checkBox1.Enabled = true;
-                label1.Text = "Wylaczone";
                 activeButton.Text = "Start";
             }
         }

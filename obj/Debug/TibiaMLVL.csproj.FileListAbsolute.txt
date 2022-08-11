@@ -1,0 +1,10 @@
+D:\Programacao\Pessoal\TibiaMLvlTrainer\bin\Debug\TibiaMLVL.exe.config
+D:\Programacao\Pessoal\TibiaMLvlTrainer\bin\Debug\TibiaMLVL.exe
+D:\Programacao\Pessoal\TibiaMLvlTrainer\bin\Debug\TibiaMLVL.pdb
+D:\Programacao\Pessoal\TibiaMLvlTrainer\obj\Debug\TibiaMLVL.csproj.AssemblyReference.cache
+D:\Programacao\Pessoal\TibiaMLvlTrainer\obj\Debug\TibiaMLVL.csproj.SuggestedBindingRedirects.cache
+D:\Programacao\Pessoal\TibiaMLvlTrainer\obj\Debug\TibiaMLVL.Form1.resources
+D:\Programacao\Pessoal\TibiaMLvlTrainer\obj\Debug\TibiaMLVL.csproj.GenerateResource.cache
+D:\Programacao\Pessoal\TibiaMLvlTrainer\obj\Debug\TibiaMLVL.csproj.CoreCompileInputs.cache
+D:\Programacao\Pessoal\TibiaMLvlTrainer\obj\Debug\TibiaMLVL.exe
+D:\Programacao\Pessoal\TibiaMLvlTrainer\obj\Debug\TibiaMLVL.pdb

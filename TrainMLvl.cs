@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -14,34 +11,33 @@ namespace TibiaMLVL
     class TrainMLvl
     {
         const uint WM_KEYDOWN = 0x0100;
-        const uint maxCasts = 6;
 
         [DllImport("User32.dll")]
         static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
 
         public bool active;
-        public bool useManaP;
+        public String processName;
         private int iterations;
         private IntPtr p;
         private System.Timers.Timer spellTimer;
 
-        public TrainMLvl(String name)
+        public TrainMLvl()
         {
-            p = GetWindowHandle(name);
-
             spellTimer = new System.Timers.Timer();
             spellTimer.Elapsed += new ElapsedEventHandler(SendSpellKey);
 
             iterations = 0;
-            useManaP = false;
         }
 
-        public void StartTimer(int interval, bool mana)
+        public bool StartTimer(int interval)
         {
+            p = GetWindowHandle(processName);
+            if (p == IntPtr.Zero)
+                return false;
             spellTimer.Interval = interval;
             spellTimer.Enabled = true;
             active = true;
-            useManaP = mana;
+            return true;
         }
 
         public void StopTimer()
@@ -52,29 +48,20 @@ namespace TibiaMLVL
 
         private IntPtr GetWindowHandle(String name)
         {
-            return Process.GetProcessesByName(name).FirstOrDefault().MainWindowHandle;
+            Process[] processes = Process.GetProcessesByName(name);
+            if (processes.Length == 0)
+            {
+                MessageBox.Show("Tibia Process not found.");
+                return IntPtr.Zero;
+            }
+            return processes.FirstOrDefault().MainWindowHandle;
         }
 
         private void SendSpellKey(object source, ElapsedEventArgs e)
         {
             PostMessage(p, WM_KEYDOWN, (int)Keys.F10, 0);
-
-            if (useManaP)
-            {
-                iterations++;
-
-                if (iterations == maxCasts)
-                {
-                    Thread.Sleep(500);
-                    PostMessage(p, WM_KEYDOWN, (int)Keys.F11, 0);
-                    iterations = 0;
-                }
-            }
-            else
-            {
-                Thread.Sleep(500);
-                PostMessage(p, WM_KEYDOWN, (int)Keys.F11, 0);
-            }
+            Thread.Sleep(500);
+            PostMessage(p, WM_KEYDOWN, (int)Keys.F11, 0);
         }
     }
 }
