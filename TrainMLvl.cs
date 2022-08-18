@@ -51,6 +51,14 @@ namespace TibiaMLVL
             Process[] processes = Process.GetProcessesByName(name);
             if (processes.Length == 0)
             {
+                Process[] allProcesses = Process.GetProcesses();
+                foreach (var process in allProcesses)
+                {
+                    if (process.MainWindowTitle.Trim().Equals(name))
+                    {
+                        return process.MainWindowHandle;
+                    }
+                }
                 MessageBox.Show("Tibia Process not found.");
                 return IntPtr.Zero;
             }

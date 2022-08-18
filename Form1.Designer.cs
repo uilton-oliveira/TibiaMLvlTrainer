@@ -90,16 +90,16 @@
             this.clientName.Name = "clientName";
             this.clientName.Size = new System.Drawing.Size(169, 20);
             this.clientName.TabIndex = 5;
-            this.clientName.Text = "hades";
+            this.clientName.Text = "client";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 13);
+            this.label3.Size = new System.Drawing.Size(142, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Client Name (.exe file name):";
+            this.label3.Text = "Window title or exe file name";
             // 
             // label4
             // 
